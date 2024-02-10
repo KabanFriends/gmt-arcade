@@ -6,7 +6,9 @@ function start(name) {
     swfobject.embedSWF = function(url, cont) {
         let ruffle = window.RufflePlayer.newest();
         
-        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()));
+        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+            style: "width: 100%; height: 100%"
+        });
 
         player.config = {
             letterbox: "on",
