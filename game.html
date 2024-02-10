@@ -13,7 +13,10 @@
     <body>
         <div id="ruffle" class="screen"></div>
         <script>
-            window.addEventListener("load", (event) => start("portal"));
+            const params = new URLSearchParams(window.location.search)
+            if (params.has("id")) {
+                window.addEventListener("load", (event) => start(params.get("id")));
+            }
         </script>
     </body>
 </html>
