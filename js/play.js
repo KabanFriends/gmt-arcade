@@ -17,5 +17,5 @@ function start(name) {
         player.load({ url: url });
     }
 
-    swfobject.embedSWF(`/swf/${name}.swf`, 'ruffle');
+    swfobject.embedSWF(`/gmt-arcade/swf/${name}.swf`, 'ruffle');
 }
