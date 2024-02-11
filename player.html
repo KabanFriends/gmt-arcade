@@ -6,24 +6,16 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>GMod Tower Arcade</title>
         <link rel="stylesheet" type="text/css" href="/gmt-arcade/css/style.css"/>
+        <script src="/gmt-arcade/js/ruffle/ruffle.js"></script>
+        <script src="/gmt-arcade/js/play.js"></script>
     </head>
 
     <body>
-        <iframe title="game" id="frame" class="frame" scrolling="no" frameborder="0"></iframe>
+        <div id="ruffle" class="screen"></div>
         <script>
-            setInterval(function() {
-                document.getElementById("frame").contentWindow.focus();
-            }, 100);
-
             const params = new URLSearchParams(window.location.search);
-
             if (params.has("id")) {
-                let myIframe = document.getElementById("frame");
-                let url_string = "player.html";
-    
-                let adsURL = url_string + "?id=" + params.get("id");
-                console.log(adsURL);
-                myIframe.src = adsURL;
+                window.addEventListener("load", (event) => start(params.get("id")));
             }
         </script>
     </body>
